@@ -1,0 +1,408 @@
+* {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    scrollbar-width: 0px;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.all {
+    width: 1920px;
+
+    margin: 0 auto;
+    position: relative;
+}
+
+.top {
+    width: 1920px;
+    height: 814px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.topbg {
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    width: 1200px;
+    height: 97px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.logo {
+    width: 233px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bestText {
+    width: 1000px;
+    height: 264px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    margin: auto;
+    margin-top: 220px;
+}
+
+.choose {
+    width: 200px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.welout {
+    width: 100%;
+    height: 650px;
+    background-color: rgba(0, 0, 0, 0.05);
+
+    position: relative;
+}
+
+.welbg {
+    width: 100%;
+    height: 448px;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    position: relative;
+    margin-top: 30px;
+}
+
+.wel {
+    width: 1300px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    position: absolute;
+    top: 50px;
+    margin-left: calc(50% - 650px);
+}
+
+.write {
+    width: 420px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    float: left;
+}
+
+.welText {
+    width: 730px;
+    height: 500px;
+    background-color: white;
+
+    float: right;
+}
+
+.video {
+    width: 360px;
+    height: 270px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    position: absolute;
+    top: 330px;
+    left: 280px;
+}
+
+.lamy {
+    width: 1200px;
+    height: 780px;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    margin: auto;
+    display: flow-root;
+}
+
+.lamyh {
+    width: 320px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    margin: 100px auto;
+}
+
+.lamys {
+    width: 100%;
+    height: 320px;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.lamyText {
+    width: 360px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.getMore {
+    width: 280px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    margin: 60px auto;
+}
+
+.pens {
+    width: 100%;
+    height: 350px;
+    background-color: rgba(0, 0, 0, 0.05);
+
+    position: relative;
+}
+
+.pen {
+    width: 1200px;
+    height: 173px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid;
+
+    margin: 0 auto;
+}
+
+.go {
+    width: 90px;
+    height: 35px;
+    background-color: white;
+
+    position: absolute;
+    top: 160px;
+    left: 400px;
+}
+
+.german {
+    width: 100%;
+    height: 440px;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    position: relative;
+}
+
+.gmbg {
+    width: 100%;
+    height: 350px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.gm {
+    width: 800px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    position: absolute;
+    top: 0;
+    left: calc(50% - 400px);
+}
+
+.gnText {
+    width: 450px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    margin: 50px auto 20px;
+
+}
+
+.use {
+    width: 100%;
+    height: 270px;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.head {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    margin: auto;
+}
+
+.useText {
+    width: 600px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    margin: 30px;
+}
+
+.solits {
+    width: 300px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.solit {
+    width: 80px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.chouse {
+    width: 880px;
+    height: 900px;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.chTexts {
+    width: 200px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.chImgs {
+    width: 100%;
+    height: 550px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.chImg {
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chouseImg {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.L {
+    height: 330px;
+}
+
+.S {
+    height: 200px;
+}
+
+.buyBotton {
+    width: 200px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.news {
+    width: 100%;
+    height: 650px;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    position: relative;
+}
+
+.newbg {
+    width: 100%;
+    height: 350px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.new {
+    width: 780px;
+    height: 430px;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    position: absolute;
+    top: 60px;
+    left:calc(50% - 390px);
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0px;
+
+}
+
+.newBox {
+    width: 740px;
+    height: 130px;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.newImg {
+    width: 340px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.newText {
+    width: 380px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.recommend {
+    width: 200px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 1);
+
+    position: absolute;
+    left: calc(50% - 100px);
+    top: 540px;
+}
+
+.bottom {
+    width: 100%;
+    height: 1010px;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+
+.botbg {
+    width: 100%;
+    height: 980px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.botText {
+    width: 600px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    position: absolute;
+    left: calc(50% - 300px);
+    top: 240px;
+}
+
+.copeRight {
+    width: 100%;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
