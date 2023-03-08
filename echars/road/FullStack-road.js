@@ -124,17 +124,24 @@ const children4 = [
     
       但仍具有一定差异的组件有了便于实现的可能<br/><br/>
     
-      可以大幅提高组件的复用性和程序的可维护性<br/><br/>`,
+      可以大幅提高组件的复用性和程序的可维护性`,
     },
   },
+  { 
+    name: "Vue脚手架" ,
+    tooltip: {
+    formatter: `Vue脚手架<br/><br/>
+
+    本质上就是使用node进行文件的处理来实现工程化<br/><br/>`,
+  },},
   {
-    name: "",
+    name: "Vue生态的学习",
     children: children5,
   },
-  { name: "NLP技术与应用" },
-  { name: "机器阅读技术与应用" },
-  { name: "开发语聊技术与应用" },
-  { name: "自然语言处理" },
+  { name: "动态/异步组件" },
+  { name: "npm包管理器" },
+  { name: "vue-router" },
+  { name: "Vuex" },
 ];
 const children3 = [
   {

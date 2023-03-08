@@ -1,16 +1,21 @@
-import AI from "./AI-road.js";
-import Java from "./Java-road.js";
-import FullStack from "./FullStack-road.js";
-import CPUOS from "./CPU&OS-road.js";
+import AI from "./road/AI-road.js";
+import Java from "./road/Java-road.js";
+import FullStack from "./road/FullStack-road.js";
+import CPUOS from "./road/CPU&OS-road.js";
+import style from "./style.js";
 
-const root={
-    name: '云顶书院开发方向',
-    lable: "",
-    animationDurationUpdate: 0,
-    tooltip: {
-      formatter: '介绍<br/>另一行介绍<br/>可以有很多行，大小与最大行宽适应'
-    },
-    itemStyle: {},
-    children: [AI, Java, FullStack, CPUOS],
+const root = {
+  name: "云顶书院开发方向",
+  lable: "",
+  animationDurationUpdate: 0,
+  tooltip: {
+    backgroundColor: style.color.orange[4],
+    borderColor: style.color.orange[3],
+    borderWidth: 2,
+    padding: 5,
+    formatter: "{b}",
+  },
+  itemStyle: {},
+  children: [AI, Java, FullStack, CPUOS],
 };
-export default root
+export default root;
