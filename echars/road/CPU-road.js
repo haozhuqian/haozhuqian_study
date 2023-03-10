@@ -1,17 +1,16 @@
 const children4 = [
-  { name: "进入一生一芯进行学习" ,
-  tooltip: {formatter: "2023年3月7日至往后..."},
-},
+  {
+    link: "http://ysyx.oscc.cc",
+    name: "进入一生一芯进行学习",
+    tooltip: { formatter: "2023年3月7日至往后..." },
+  },
 ];
 const children311 = [
   { name: "计算机发展历程" },
   { name: "计算机系统层次结构" },
   { name: "计算机性能指标" },
 ];
-const children3121 = [
-  { name: "浮点数的表示" },
-  { name: "浮点数的加减运算" },
-];
+const children3121 = [{ name: "浮点数的表示" }, { name: "浮点数的加减运算" }];
 const children3122 = [
   { name: "串行加法器和并行加法器" },
   { name: "算术逻辑单元的功能和结构" },
@@ -19,12 +18,10 @@ const children3122 = [
 const children312 = [
   { name: "数制与编码" },
   { name: "定点数的表示与运算" },
-  { name: "浮点数的表示与运算" ,children: children3121},
-  { name: "算术逻辑单元(ALU)" ,children: children3122},
+  { name: "浮点数的表示与运算", children: children3121 },
+  { name: "算术逻辑单元(ALU)", children: children3122 },
 ];
-const children3131 = [
-  { name: "多级存储系统" },
-];
+const children3131 = [{ name: "多级存储系统" }];
 const children3132 = [
   { name: "SRAM和DRAM" },
   { name: "只读存储器" },
@@ -35,10 +32,7 @@ const children3133 = [
   { name: "主存容量的扩展" },
   { name: "存储器和CPU的连接" },
 ];
-const children3134 = [
-  { name: "双端口RAM" },
-  { name: "多模块存储器" },
-];
+const children3134 = [{ name: "双端口RAM" }, { name: "多模块存储器" }];
 const children3135 = [
   { name: "Cache基本工作原理" },
   { name: "Cache和主存的映射方式" },
@@ -52,12 +46,12 @@ const children3136 = [
   { name: "段页式虚拟存储器" },
 ];
 const children313 = [
-  { name: "存储器层次化结构" ,children: children3131,},
-  { name: "半导体随机存储器" ,children: children3132,},
-  { name: "主存储器与·CPU的连接" ,children: children3133,},
-  { name: "双端口RAM和多模式存储器" ,children: children3134,},
-  { name: "高速缓冲存储器" ,children: children3135,},
-  { name: "虚拟存储器" ,children: children3136,},
+  { name: "存储器层次化结构", children: children3131 },
+  { name: "半导体随机存储器", children: children3132 },
+  { name: "主存储器与·CPU的连接", children: children3133 },
+  { name: "双端口RAM和多模式存储器", children: children3134 },
+  { name: "高速缓冲存储器", children: children3135 },
+  { name: "虚拟存储器", children: children3136 },
 ];
 const children3141 = [
   { name: "X86汇编指令入门" },
@@ -68,32 +62,20 @@ const children3142 = [
   { name: "精简指令系统计算机" },
 ];
 const children314 = [
-  { name: "指令格式" ,},
-  { name: "指令寻址方式" ,children: children3141},
-  { name: "CISC和RISC的基本概念" ,children: children3142},
+  { name: "指令格式" },
+  { name: "指令寻址方式", children: children3141 },
+  { name: "CISC和RISC的基本概念", children: children3142 },
 ];
-const children3151 = [
-  { name: "CPU的功能" },
-  { name: "CPU的基本结构" },
-];
-const children3152 = [
-  { name: "指令周期" },
-  { name: "指令周期的数据流" },
-];
-const children3153 = [
-  { name: "数据通路的功能" },
-  { name: "数据通路的功能" },
-];
-const children3154 = [
-  { name: "硬布控制器" },
-  { name: "微程序控制器" },
-];
+const children3151 = [{ name: "CPU的功能" }, { name: "CPU的基本结构" }];
+const children3152 = [{ name: "指令周期" }, { name: "指令周期的数据流" }];
+const children3153 = [{ name: "数据通路的功能" }, { name: "数据通路的功能" }];
+const children3154 = [{ name: "硬布控制器" }, { name: "微程序控制器" }];
 const children315 = [
-  { name: "CPU的功能和基本结构" ,children: children3151},
-  { name: "指令执行过程" ,children: children3152},
-  { name: "数据通路的功能和基本结构" ,children: children3153},
-  { name: "控制器的功能和工作原理" ,children: children3154},
-  { name: "指令流水线" ,},
+  { name: "CPU的功能和基本结构", children: children3151 },
+  { name: "指令执行过程", children: children3152 },
+  { name: "数据通路的功能和基本结构", children: children3153 },
+  { name: "控制器的功能和工作原理", children: children3154 },
+  { name: "指令流水线" },
 ];
 const children316 = [
   { name: "总线仲裁" },
@@ -106,10 +88,10 @@ const children3171 = [
   { name: "外存储器" },
 ];
 const children3172 = [
-  { name: "I\O接口的功能" },
-  { name: "I\O接口基本结构" },
-  { name: "I\O接口类型" },
-  { name: "I\O端口及其编址" },
+  { name: "IO接口的功能" },
+  { name: "IO接口基本结构" },
+  { name: "IO接口类型" },
+  { name: "IO端口及其编址" },
 ];
 const children3173 = [
   { name: "程序查询方式" },
@@ -117,18 +99,18 @@ const children3173 = [
   { name: "DMA方式" },
 ];
 const children317 = [
-  { name: "外部设备" ,children: children3171},
-  { name: "I\\O接口" ,children: children3172},
-  { name: "I\\O方式" ,children: children3173},
+  { name: "外部设备", children: children3171 },
+  { name: "I\\O接口", children: children3172 },
+  { name: "I\\O方式", children: children3173 },
 ];
 const children31 = [
-  { name: "计算机系统概述" ,children: children311},
-  { name: "数据的表示和运算" ,children: children312},
-  { name: "存储系统" ,children: children313},
-  { name: "指令系统" ,children: children314},
-  { name: "中央处理器" ,children: children315},
-  { name: "总线" ,children: children316},
-  { name: "输入\\输出系统" ,children: children317},
+  { name: "计算机系统概述", children: children311 },
+  { name: "数据的表示和运算", children: children312 },
+  { name: "存储系统", children: children313 },
+  { name: "指令系统", children: children314 },
+  { name: "中央处理器", children: children315 },
+  { name: "总线", children: children316 },
+  { name: "输入\\输出系统", children: children317 },
 ];
 const children32 = [
   { name: "浮点数的表示以及加减运算" },
@@ -143,8 +125,16 @@ const children33 = [
   { name: "总线的内部操作" },
   { name: "I\\O接口的基本结构和内部的工作原理" },
 ];
+const children34 = [
+  { name: "计算机组成原理(艾伦·克莱门茨)" ,link:"https://yundingshuyuan.feishu.cn/file/boxcnKtD2an497guzJHicGdiGSb"},
+  { name: "王道计算机组成原理" ,link:'https://yundingshuyuan.feishu.cn/file/boxcnkN4cBvIy2dZL55TWEPrTef'},
+  { name: "计算机组成原理-慕课网(上)" ,link:"https://www.bilibili.com/video/BV1fp4y1Y7vG/?spm_id_from=333.880.my_history.page.click&vd_source=c882380fc219a9f433deaf7053e5507e"},
+  { name: "计算机组成原理-慕课网(中)" ,link:"https://www.bilibili.com/video/BV1a5411h7fi/?spm_id_from=333.880.my_history.page.click"},
+  { name: "计算机组成原理-慕课网(下)" ,link:"https://www.bilibili.com/video/BV1pk4y1y77B/?spm_id_from=333.788.recommend_more_video.11&vd_source=c882380fc219a9f433deaf7053e5507e"},
+];
 const children3 = [
-  { name: "学习内容" ,children: children31 },
+  { name: "学习内容", children: children31 },
+  { name: "推荐资料", children: children34 },
   {
     collapsed: true,
     name: "计算机组成原理学习",
@@ -154,6 +144,23 @@ const children3 = [
   {
     name: "难点",
     children: children33,
+  },
+];
+const children25 = [
+  {
+    link:"https://www.bilibili.com/video/BV12y4y1v7V3/?spm_id_from=333.337.search-card.all.click&vd_source=fc9c57c54ab37601aa8bc5f22e2b76a1",
+    name: "课程",
+    tooltip: {
+      formatter: "Verilog硬件描述语言-西安电子科技大学",
+    },
+  },
+  {
+    name: "Verilog在线测试平台",
+    link:"https://verilogoj.ustc.edu.cn/oj/",
+  },
+  {
+    name: "HDLBits — Verilog Practice",
+    link:"https://hdlbits.01xz.net/wiki/Main_Page",
   },
 ];
 const children24 = [
@@ -207,6 +214,10 @@ const children2 = [
   {
     name: "实战",
     children: children24,
+  },
+  {
+    name: "参考",
+    children: children25,
   },
 ];
 const children16 = [
@@ -304,6 +315,13 @@ const children1 = [
     children: children2,
   },
   {
+    link:"https://yundingshuyuan.feishu.cn/file/boxcnLX4q4jTRYW9qsbs1mIawjg",
+    name: "参考资料",
+    tooltip: {
+      formatter: "数字设计和计算机体系结构",
+    },
+  },
+  {
     collapsed: true,
     name: "重点",
     tooltip: {
@@ -331,7 +349,7 @@ const children1 = [
 const root = {
   collapsed: true,
   name: "CPU小组",
-  tooltip: {formatter: ""},
+  tooltip: { formatter: "" },
   itemStyle: {},
   children: children1,
 };

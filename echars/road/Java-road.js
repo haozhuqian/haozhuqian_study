@@ -55,7 +55,6 @@ const root = {
   collapsed: true,
   name: "Java",
   tooltip: { formatter: "{b}" },
-  itemStyle: {},
   children: children1,
 };
 

@@ -6,7 +6,6 @@ import style from "./style.js";
 
 const root = {
   name: "云顶书院开发方向",
-  lable: "",
   animationDurationUpdate: 0,
   tooltip: {
     backgroundColor: style.color.orange[4],
@@ -15,7 +14,6 @@ const root = {
     padding: 5,
     formatter: "{b}",
   },
-  itemStyle: {},
   children: [AI, Java, FullStack, CPUOS],
 };
 export default root;

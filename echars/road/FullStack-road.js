@@ -315,7 +315,6 @@ const children1 = [
 ];
 const root = {
   collapsed: true,
-  link: "https://haozhuqian.github.io/",
   name: "FullStack",
   lable: "",
   tooltip: {
