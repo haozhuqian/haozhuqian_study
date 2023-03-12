@@ -1,6 +1,9 @@
 import data from "./data.js";
 import style from "./style.js";
 
+const theme = style.color.orange[2];
+const bgc = style.color.bgc;
+
 // 基于准备好的dom，初始化echarts实例
 const myChart = echarts.init(document.getElementById("main"));
 // window.onresize = myChart.resize;
@@ -13,6 +16,7 @@ myChart.on("click", function (params) {
 const option = {
   tooltip: {
     trigger: "item",
+    show:false,
     triggerOn: "mousemove",
   },
   series: [
@@ -25,65 +29,46 @@ const option = {
       id: 0,
       name: "tree",
       data: [data],
-      symbolSize: 15,
+      symbol: "circle",
+      symbolSize: 10,
+      symbolOffset: [5, 0] ,
       edgeShape: "polyline",
       edgeForkPosition: "63%",
       initialTreeDepth: 3,
       roam: true,
       tooltip: {
         textStyle: {
-          color: style.color.orange[3],
-          fontStyle: "normal",
-          fontWeight: "normal",
-          fontFamily: "sans-serif",
+          color: style.color.orange[2],
           fontSize: 14,
           lineHeight: 14,
-          ellipsis: "...",
+          fontWeight: "700",
         },
-        backgroundColor: style.color.orange[4],
-        borderColor: style.color.orange[3],
         borderWidth: 2,
         padding: 5,
         formatter: "{b}",
+        extraCssText: "box-shadow: none",
       },
       lineStyle: {
-        color: style.color.orange[3],
-        width: 1.5,
-        curveness: 0.5,
-        shadowBlur: 2,
-        shadowColor: style.color.orange[2],
-        shadowOffsetX: -2,
-        shadowOffsetY: 2,
+        color: "inherit",
+        width: 3,
       },
       itemStyle: {
-        color: style.color.orange[3],
-        borderColor: style.color.orange[3],
-        borderWidth: 2,
-        borderType: "solid",
-        borderDashOffset: 0,
-        borderCap: "round",
-        borderJoin: "rpund",
-        borderMiterLimit: 10,
-        shadowBlur: 3,
-        shadowColor: style.color.orange[2],
-        shadowOffsetX: 2,
-        shadowOffsetY: 1,
-        opacity: 1,
+        color: "inherit",
       },
       label: {
+        padding:3,
         show: true,
-        position: "top",
-        distance: 8,
-        color: style.color.orange[3],
+        position: "right",
+        distance: 0,
+        verticalAlign: "middle",
+        align: "left",
+        color: "inherit",
         fontStyle: "normal",
-        fontWeight: "900",
+        fontWeight: "700",
         fontFamily: "sans-serif",
         fontSize: 15,
-        align: "center",
-        verticalAlign: "middle",
-        lineHeight: 10,
-        backgroundColor: style.color.orange[4],
-        textBorderColor: style.color.orange[3],
+        height: 20,
+        textBorderColor: style.color.orange[2],
         textBorderWidth: 0,
         textBorderType: "solid",
       },
@@ -93,14 +78,14 @@ const option = {
       leaves: {
         label: {
           position: "right",
-
           distance: 3,
           verticalAlign: "middle",
           align: "left",
         },
       },
       emphasis: {
-        focus: "ancestor",
+        disabled: true,
+        focus: "none",
       },
       expandAndCollapse: true,
       animationDuration: 550,
