@@ -20,3 +20,8 @@ colors = [];
 // Array 还有from和of两个静态方法可以构造数组
 console.log(Array.from('red'));// [ 'r', 'e', 'd' ]
 
+const m = new Map().set(1,2).set(3,4);
+console.log(Array.from(m));// [ [ 1, 2 ], [ 3, 4 ] ]
+
+const arr = [1,2,3,4];
+console.log(Array.from(arr) === arr);// false
