@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <template id="money">
+    <a :href="link[id]" :class="{blog:ifb,git:!ifb}" class="normol">{{info[id]}}</a> <br>
+    <button @click="change()" :class = 'color()'>change</button>
+    <div :class="['normal',style,{textStyle:ifb}]">动态绑定class</div>
+    <div :style="{color:textColor,'font-size':'20px'}">动态绑定style1</div>
+    <div :style="{fontSize:size+'px'}">动态绑定style2</div>
+    <div :[name]="value">动态绑定属性</div>
+    <div v-bind="bind">元素直接绑定对象</div>
+  </template>
+  <style>
+    .normol {
+      border:1px solid yellow;
+    }
+    .blog {
+      background: blue;
+    }
+    .textStyle {
+      color: red
+    }
+    .git {
+      background: red;
+    }
+  </style>
+  <script src='../js/vue.js'></script>
+  <script>
+    const App = {
+      template: '#money',
+      data() {
+        return {
+          bind:{
+            'name': 'money',
+          },
+          name:'abc',
+          value: 'cba',
+          style:'blog',
+          ifb:true,
+          textColor: 'red',
+          size:20,
+          id: 0,
+          info: ['myBlog', 'github'],
+          link: ['https://haozhuqian.github.io/', 'https://github.com/haozhuqian']
+        }
+      },
+      methods: {
+        change() {
+          this.id = 1 + this.id * (-1);
+          this.ifb= !this.ifb;
+        },
+        color(){
+          return 'normol'
+        }
+      }
+    }
+    Vue.createApp(App).mount('#app');
+  </script>
+</body>
+
+</html>
