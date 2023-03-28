@@ -4,17 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>事件绑定</title>
 </head>
 <body>
   <div id="app"></div>
   <template id="money">
-    <h2>{{message}}</h2>
-    <h2>{{message.split('').reverse().join('')}}</h2>
-    <h2>{{getReverseMessage()}}</h2>
-    <h2>{{counter>5? counter+'>5':counter+'<=5'}}</h2>
-    <button @click = "increment">++</button>
-    <button @click = "decrement">--</button>
+    <button v-on:click = "btnCk('money',$event,)">{{counter}}</button>
+    <button @mousemove = 'counter++'>button2</button>
+    <!-- 赋值对象时函数不可以有参数 -->
+    <button v-on="{ mousedown: doThis, mouseup: doThat }">button3</button>
   </template>
   <script src = '../js/vue.js'></script>
   <script>
@@ -22,19 +20,20 @@
       template:'#money',
       data() {
         return {
+          counter:0,
           message:'Hellow World!',
-          counter:10,
         }
       },
       methods:{
-        getReverseMessage(){
-          return this.message.split(' ').reverse().join(' ');
+        btnCk(event , string) {
+          console.log(string);
+          console.log(event);
         },
-        increment(){
-          this.counter++;
+        doThis(){
+          console.log('mousedown');
         },
-        decrement(){
-          this.counter--;
+        doThat(){
+          console.log('mouseup');
         }
       }
     }

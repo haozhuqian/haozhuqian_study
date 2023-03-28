@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+  <template id="money">
+    <h2>字母表</h2>
+    <ul>
+      <li v-for = '(name,index) in names'>{{index+1}} - {{name}}</li>
+    </ul>
+    <h2>复杂信息渲染</h2>
+    <template v-for = '(item,index) in products'>
+      <h3>商品名：{{item.name}}</h3>
+      <span>商品价格：{{item.price}}，</span>
+      <span>商品数量：{{item.num}}，</span>
+      <span>商品序号：{{index}} </span>
+    </template>
+    <h2>遍历对象</h2>
+    <div v-for = '(value,key,index) in info'>{{key}} - {{value}} - {{index}}</div>
+    <h2>遍历数字</h2>
+    <div v-for = 'num in 10'>{{num}}</div>
+  </template>
+  <script src = '../js/vue.js'></script>
+  <script>
+    const App = {
+      template:'#money',
+      data() {
+        return {
+          names:['a','b','c'],
+          products:[{
+            name:'铅笔',
+            price: 1,
+            num: 100,
+          },
+          {
+            name:'尺子',
+            price: 3,
+            num: 40,
+          },
+          {
+            name:'橡皮',
+            price: 2,
+            num: 30,
+          },],
+          info:{
+            message:'a Object',
+            name:'money',
+            age:20,
+            height:1.8,
+          }
+        }
+      }
+    }
+    Vue.createApp(App).mount('#app');
+  </script>
+</body>
+</html>

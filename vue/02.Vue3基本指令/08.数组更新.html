@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for='item in ws' :key='item'>{{item}}</li>
+    </ul>
+    <button @click='newA'>new</button>
+    <button @click='change'>change</button>
+  </div>
+
+  <script src='../js/vue.js'></script>
+  <script>
+    const App = {
+      data() {
+        return {
+          ws: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'],
+        }
+      },
+      methods: {
+        newA() {
+          this.ws = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+        },
+        change() {
+          this.ws.pop();
+        }
+      }
+    }
+    Vue.createApp(App).mount('#app');
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <template id="money">
+    <h3>{{fullnameM()}}</h3>
+    <h3>{{fullnameM()}}</h3>
+    <h3>{{fullnameM()}}</h3>
+    <h3>{{fullnameM()}}</h3>
+    <h3>{{fullnameC}}</h3>
+    <h3>{{fullnameC}}</h3>
+    <h3>{{fullnameC}}</h3>
+    <h3>{{fullnameC}}</h3>
+    <button @click='change'>change name</button>
+    <button @click='back'>back name</button>
+    <button @click='setname'>set name</button>
+  </template>
+  <script src='../js/vue.js'></script>
+  <script>
+    const App = {
+      template: '#money',
+      data() {
+        return {
+          firstName: 'Good',
+          lastName: 'Money',
+          info: {
+            name: 'justice',
+          }
+        }
+      },
+      methods: {
+        change() {
+          this.firstName = "Great";
+          this.info.name = "change";
+        },
+        back() {
+          this.firstName = "Good";
+        },
+        setname() {
+          this.fullnameC = 'set name';
+        },
+        fullnameM() {
+          console.log('methods.fullnameM');
+          return this.firstName + ' ' + this.lastName;
+        },
+        namechange(){
+          console.log('the info.name has been changed');
+        }
+      },
+      computed: {
+        fullnameC: {
+          get() {
+            console.log('methods.fullnameC');
+            return this.firstName + ' ' + this.lastName;
+          },
+          set(news) {
+            console.log('set');
+            let name = news.split(' ');
+            console.log(name);
+            this.firstName = name[0];
+            this.lastName = name[1];
+          }
+        }
+      },
+      watch: {
+        firstName(news, old) {
+          console.log('the firstName has been changed');
+          console.log(old);
+          console.log(Vue.toRaw(old));
+        },
+        info: {
+          handler() {
+            console.log('the info has been changed');
+          },
+          // 深度监听
+          deep:true,
+          // 第一次渲染直接执行一次
+          immediate:true,
+        },
+        'info.name':'namechange'
+      }
+    }
+    Vue.createApp(App).mount('#app');
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>条件渲染</title>
+</head>
+<body>
+  <div id="app"></div>
+  <template id="money">
+
+    <ul v-if="names.length>4">
+      <li v-for = 'item in names'>{{item}}</li>
+    </ul>
+    <h2 v-else-if = 'names.length>0'>数据不多</h2>
+    <h2 v-else>else 没有数据</h2>
+    <h2 v-show="names.length == 0">show 没有数据</h2>
+  </template>
+  <script src = '../js/vue.js'></script>
+  <script>
+    const App = {
+      template:'#money',
+      data() {
+        return {
+          names:[],
+        }
+      }
+    }
+    Vue.createApp(App).mount('#app');
+  </script>
+</body>
+</html>
