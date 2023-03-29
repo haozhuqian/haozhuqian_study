@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>综合案例</title>
+</head>
+<style>
+  table {
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+  thead {
+    background-color: #eeeeee;
+  }
+  .tClick{
+    background-color: orange;
+  }
+  th,
+  td {
+    border: 1px solid #000000;
+    padding: 8px 16px;
+  }
+</style>
+
+<body>
+  <div id="app">
+    <h2 v-if="books.length === 0">购物车为空</h2>
+    <table v-else>
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>书名</th>
+          <th>出版日期</th>
+          <th>价格</th>
+          <th>购买数量</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr 
+        :class="{tClick:index == chouseId}" 
+        v-for='(item,index) in books' 
+        :key='item.id'
+        @click = 'chouseT(index)'>
+          <td>{{ index+1 }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.date }}</td>
+          <td>{{ addMoney(item.price) }}</td>
+          <td>
+            <button :disabled="item.count<=0" @click="decrement(item,'count')">-</button>
+            {{ item.count }}
+            <button @click="increment(item,'count')">+</button>
+          </td>
+          <td><button @click.stop="deleteBook(index,books)">移除</button></td>
+        </tr>
+      </tbody>
+    </table>
+      <h2>总价：{{addMoney(totalPrice)}}</h2>
+
+  </div>
+  <script src='../js/vue.js'></script>
+  <script>
+    const App = {
+      data() {
+        return {
+          books: [
+            {
+              id: 1,
+              name: '《JavaScript高级程序设计》',
+              date: '2022-6',
+              price: 126.00,
+              count: 1,
+            },
+            {
+              id: 2,
+              name: '《你不知道的 JS（上卷）》',
+              date: '2022-1',
+              price: 78.00,
+              count: 1,
+            },
+            {
+              id: 3,
+              name: '《你不知道的 JS（中卷）》',
+              date: '2022-2',
+              price: 76.00,
+              count: 1,
+            },
+            {
+              id: 4,
+              name: '《你不知道的 JS（下卷）》',
+              date: '2022-3',
+              price: 64.00,
+              count: 1,
+            },
+          ],
+          chouseId:-1,
+
+        }
+      },
+      computed: {
+        totalPrice() {
+          return this.books.reduce((prev, item, index) => {
+            return prev + item.price * item.count;
+          }, 0)
+        }
+      },
+      methods: {
+        addMoney(price) {
+          return '￥' + price;
+        },
+        decrement(obj,key) {
+          obj[key]--;
+        },
+        increment(obj,key) {
+          obj[key]++;
+        },
+        deleteBook(index,arr){
+          arr.splice(index,1);
+          if(index<=this.chouseId){
+            this.chouseId--
+          }
+        },
+        chouseT(index){
+          this.chouseId =index;
+        }
+      }
+    };
+    Vue.createApp(App).mount('#app');
+  </script>
+</body>
+
+</html>

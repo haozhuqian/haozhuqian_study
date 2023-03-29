@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .product {
+      background-color: orange;
+    }
+  </style>
+  <div id="app">
+    <home-nav></home-nav>
+    <product-item></product-item>
+    <product-item></product-item>
+    <product-item></product-item>
+    <product-item></product-item>
+  </div>
+  <template id='product'>
+    <div class="product">
+      <h2>{{title}}</h2>
+      <p>商品描述，折扣</p>
+      <p>价格{{price}}</p>
+      <button>收藏</button>
+    </div>
+  </template>
+
+<template id="nav">
+  <h2>导航栏</h2>
+</template>
+
+  <script src='../js/vue.js'></script>
+  <script>
+    const App = {
+      components: {
+        ProductItem: {
+          template: '#product',
+          data() {
+            return {
+              title: '这是title',
+              price: 9.9,
+
+            }
+          }
+        },
+        HomeNav: {
+          template:'#nav',
+
+        }
+      },
+      data() {
+        return {
+          message: 'Hellow World!',
+        }
+      }
+    }
+    Vue.createApp(App).mount('#app');
+  </script>
+</body>
+
+</html>

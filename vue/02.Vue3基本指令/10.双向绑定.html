@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" v-model.lazy="message">
+    <h2>{{ message }}</h2>
+    <textarea cols="30" rows="10" v-model="message"></textarea><br>
+    <label for="agree">
+      <input id="agree" type="checkbox" v-model="isAgree">同意
+    </label>
+    <h2>isAgree:{{ isAgree }}</h2>
+    <h2>爱好: {{likes}} </h2>
+    <label for="sing">
+      <input id='sing' type="checkbox" v-model="likes" value = '唱'>唱
+    </label>
+    <label for="dance">
+      <input id='dance' type="checkbox" v-model="likes" value = '跳'>跳
+    </label>
+    <label for="rap">
+      <input id='rap' type="checkbox" v-model="likes" value = 'rap'>rap
+    </label>
+    <label for="basketball">
+      <input id='basketball' type="checkbox" v-model="likes" value = '篮球'>篮球
+    </label>
+    <h2>性别: {{gen}} </h2>
+    <label for="man">
+      <input id='man' type="radio" v-model="gen" name="gender" value = '男'>男
+    </label>
+    <label for="woman">
+      <input id='woman' type="radio" v-model="gen" name="gender" value = '女'>女
+    </label>
+    <label for="gunship">
+      <input id='gunship' type="radio" v-model="gen" name="gender" value = '武装直升机'>武装直升机
+    </label>
+    <label for="Walmart">
+      <input id='Walmart' type="radio" v-model="gen" name="gender" value = '沃尔玛购物袋'>沃尔玛购物袋
+    </label>
+    <br>
+    <h2>单选:{{fruit}} </h2>
+    <select v-model="fruit">
+      <option value="apple">苹果</option>
+      <option value="orange">橘子</option>
+      <option value="banana">香蕉</option>
+    </select>
+    <hr>
+    <h2>多选{{fruits}} </h2>
+    <select v-model="fruits" multiple size="3">
+      <option value="apple">苹果</option>
+      <option value="orange">橘子</option>
+      <option value="banana">香蕉</option>
+    </select>
+  </div>
+  <script src='../js/vue.js'></script>
+  <script>
+    const App = {
+      data() {
+        return {
+          message: 'Hellow World!',
+          isAgree: true,
+          likes:[],
+          gen:'你怎么敢定义我的性别',
+          fruit:'',
+          fruits:[],
+        }
+      }
+    }
+    Vue.createApp(App).mount('#app');
+  </script>
+</body>
+
+</html>
