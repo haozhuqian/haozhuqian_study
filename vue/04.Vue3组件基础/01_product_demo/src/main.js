@@ -6,5 +6,6 @@ import { createApp } from 'vue'
 // import App from './05.组件通信-非父子/App.vue'
 // import App from './06.事件总线/App.vue'
 // import App from './07.组件的生命周期/App.vue'
-import App from './08.获取元素组件/App.vue'
+// import App from './08.获取元素组件/App.vue'
+import App from './09.动态组件/App.vue'
 createApp(App).mount('#app')
