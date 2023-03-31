@@ -4,18 +4,22 @@
   </div>
   <h2>{{ name }}-{{ age }} </h2>
   <button @click='change()'>Change</button>
+  <button @click="isShowCate=!isShowCate">if show Category</button>
+  <Category v-if = 'isShowCate'></Category>
 </template>
 
 <script>
 import { computed } from 'vue';
 import Home from './Home.vue';
 import eventBus from './utils/event-bus';
+import Category from './Category.vue';
 export default {
-  components: { Home, },
+  components: { Home,Category },
   data() {
     return {
       name: 'Money',
       age: '20',
+      isShowCate:true,
     }
   },
   methods:{
@@ -37,7 +41,7 @@ export default {
       console.log('Banner事件监听');
       this.name=name;
       this.age=age;
-    })
+    });
   },
 }
 </script>
