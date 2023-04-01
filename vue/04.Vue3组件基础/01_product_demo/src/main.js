@@ -9,6 +9,15 @@ import { createApp } from 'vue'
 // import App from './08.获取元素组件/App.vue'
 // import App from './09.动态组件/App.vue'
 // import App from './10.异步组件/App.vue'
-import App from './11.组件的双向绑定/App.vue'
+// import App from './11.组件的双向绑定/App.vue'
+import App from './12.组件混入/App.vue'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+// app.mixin({
+//   created(){
+//     console.log('全局混入');
+//   }
+// })
+
+app.mount('#app')
