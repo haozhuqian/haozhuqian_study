@@ -9,7 +9,7 @@
 </template>
   
 <script>
-import { reactive ,readonly } from 'vue';
+import { reactive ,readonly,isProxy,isReactive,isReadonly,toRaw,shallowReactive,shallowReadonly } from 'vue';
 import ShowInfo from './ShowInfo.vue';
 
 export default {
@@ -32,6 +32,7 @@ export default {
       roInfo.name = newName;
       console.log(newName);
     }
+    // console.log(isProxy(info));
     return {
       info,
       roInfo,
