@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <!-- react 核心代码 -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <!-- react跨平台渲染依赖 -->
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- 转义jsx为React -->
+  <!-- Don't use this in production: -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    const root = ReactDOM.createRoot(document.querySelector('#root'));
+    let message = 'hellow world';
+    function btnClick() {
+      message = 'hellow React';
+      rootRender();
+    }
+    function rootRender() {
+      root.render((
+        <div>
+          <h2>{message}</h2>
+          <button onClick={btnClick}>change</button>
+        </div>
+      ));
+    }
+    rootRender();
+
+
+  </script>
+</body>
+
+</html>
