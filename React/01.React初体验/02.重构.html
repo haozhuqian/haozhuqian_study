@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script src="../lib/react.js"></script>
+  <script src="../lib/react-dom.js"></script>
+  <script src="../lib/babel.js"></script>
+
+
+  <script type="text/babel">
+    class App extends React.Component {
+
+      constructor() {
+        super();
+
+        this.state = {
+          message: "Hello World"
+        }
+      }
+
+      btnClick() {
+        this.setState({
+          message: "Hello React"
+        })
+      }
+
+      render() {
+        return (
+          <div>
+            <h2>{this.state.message}</h2>
+            <button onClick={this.btnClick.bind(this)}>change</button>
+          </div>
+        )
+      }
+    }
+
+    const root = ReactDOM.createRoot(document.querySelector('#root'));
+
+
+    root.render(<App />)
+
+
+  </script>
+</body>
+
+</html>
