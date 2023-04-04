@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="../lib/react.js"></script>
+  <script src="../lib/react-dom.js"></script>
+  <script src="../lib/babel.js"></script>
+  <script type="text/babel">
+    class App extends React.Component{
+      constructor() {
+        super();
+        this.state={
+          counter:0,
+          message:'Good Money',
+          // 数组拼接后显示
+          arr:['abc','def','ghi'],
+
+          un:undefined,
+          nu:null,
+          bo:true,
+
+          obj:{
+            name:'Hao'
+          }
+        }
+
+      }
+      render(){
+        return (
+        <div>
+
+          {/*数字、字符串、数组会正常显示*/}
+
+          <div>number:{this.state.counter} </div>
+          <div>string:{this.state.message} </div>
+          <div>array:{this.state.arr} </div>
+
+          {/*undefined、null、布尔值会显示为空*/}
+
+          <div>undefined:{this.state.un}</div>
+          <div>null:{this.state.nu}</div>
+          <div>bolean:{this.state.bo}</div>
+
+          {/*对象类型无法解析，会报错*/}
+
+          {/*<div>object:{this.state.obj}</div>*/}
+
+          {/*undefined、null、布尔值会显示为空*/}
+
+          <div>表达式:1+2={1+2}</div>
+          <div>'Good'+'Money'={'Good'+'Money'}</div>>
+
+        </div>
+        )
+      }
+    }
+
+    const root = ReactDOM.createRoot(document.querySelector('#root'))
+    root.render(<App/>)
+  </script>
+</body>
+</html>
