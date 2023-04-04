@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 打开浏览器3D视图工具，可以观察是否在同一个图层 */
+    .box , .container {
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+    }
+    .container {
+      background-color: blue;
+      /* 不会生成新的图层 */
+      /* transform:translateX(10px); */
+
+      /* 会生成新的图层 */
+      /* position: fixed; */
+      /* transform:translateZ(10px); */
+      /* will-change: transform; */
+
+      /* opacity属性与transform属性执行渐变或者动画时会单独在新的图层进行 */
+      /* transition: transform 500ms; */
+    }
+    .container:hover{
+      transform: translateX(200px);
+    }
+    /* 分层在某种程度上可以提高性能，但它以内存管理为代价，因此不应该作为web性能优化策略的一部分，不要过度使用 */
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div class="container"></div>
+</body>
+</html>
