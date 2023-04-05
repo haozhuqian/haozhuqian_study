@@ -19,7 +19,11 @@
   所以可以用defer或者async属性使得它不再阻塞DOM tree的构建
 
   含有defer属性的脚本即使下载完成也会等待DOM tree构建完成
-  然后在DOMContentLoaded事件之前先执行defer中的代码 -->
+  然后在DOMContentLoaded事件之前先执行defer中的代码
+  多个defer脚本会按照引入顺序执行
+
+  含有async属性的脚本完全独立下载执行，不受任何事件约束
+  不能保证按照引入顺序执行-->
   <script>
     window.addEventListener('DOMContentLoaded', ()=>{
       console.log('DOMContentLoaded');
