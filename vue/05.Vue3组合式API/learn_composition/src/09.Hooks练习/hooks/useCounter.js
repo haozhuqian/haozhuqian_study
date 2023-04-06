@@ -1,4 +1,4 @@
-import { ref,onMounted } from "vue";
+import { ref } from "vue";
 
 export default function useCounter() {
   const counter = ref(0);
@@ -8,9 +8,6 @@ export default function useCounter() {
   function decrement() {
     counter.value--;
   }
-  onMounted(()=>{
-    console.log('useCounter');
-  })
   return {
     counter,
     increment,

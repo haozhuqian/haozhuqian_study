@@ -7,9 +7,10 @@
 </template>
 
 <script>
-import useCounter from './hooks/useCounter';
+import useCounter from '../hooks/useCounter';
 
 export default {
+  name:'about',
   setup() {
     return {...useCounter()}
   }
