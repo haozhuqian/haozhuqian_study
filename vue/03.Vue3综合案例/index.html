@@ -8,6 +8,14 @@
   <title>综合案例</title>
 </head>
 <style>
+  .name {
+    width: 100px;
+  }
+
+  .price {
+    width: 30px;
+  }
+
   table {
     border-collapse: collapse;
     text-align: center;
@@ -16,9 +24,11 @@
   thead {
     background-color: #eeeeee;
   }
-  .tClick{
+
+  .tClick {
     background-color: orange;
   }
+
   th,
   td {
     border: 1px solid #000000;
@@ -28,38 +38,51 @@
 
 <body>
   <div id="app">
+    <h2>总价：{{addMoney(totalPrice)}} 当前选中书籍：{{books[chouseId]?.name}} </h2>
     <h2 v-if="books.length === 0">购物车为空</h2>
     <table v-else>
       <thead>
         <tr>
           <th>序号</th>
           <th>书名</th>
-          <th>出版日期</th>
           <th>价格</th>
           <th>购买数量</th>
           <th>操作</th>
         </tr>
       </thead>
       <tbody>
-        <tr 
-        :class="{tClick:index == chouseId}" 
-        v-for='(item,index) in books' 
-        :key='item.id'
-        @click = 'chouseT(index)'>
+        <tr :class="{tClick:index == chouseId}" v-for='(item,index) in books' :key='item.id' @click='chouseT(index)'>
           <td>{{ index+1 }}</td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.date }}</td>
+          <td>{{ addBook(item.name) }}</td>
           <td>{{ addMoney(item.price) }}</td>
           <td>
-            <button :disabled="item.count<=0" @click="decrement(item,'count')">-</button>
+            <button :disabled="item.count<=0" @click.stop="decrement(item,'count')">-</button>
             {{ item.count }}
-            <button @click="increment(item,'count')">+</button>
+            <button @click.stop="increment(item,'count')">+</button>
           </td>
           <td><button @click.stop="deleteBook(index,books)">移除</button></td>
         </tr>
+        <tr v-if='btnState'>
+          <td>{{books.length+1}}</td>
+          <td>
+            <input type="text" v-model="newName" class="name">
+          </td>
+          <td>
+            <input type="number" v-model="newPrice" class="price">
+          </td>
+          <td>
+            <button @click="deNew" :disabled="newCount<=0">-</button>
+            {{newCount}}
+            <button @click="inNew">+</button>
+          </td>
+          <td><button @click.stop="" disabled>移除</button></td>
+        </tr>
       </tbody>
     </table>
-      <h2>总价：{{addMoney(totalPrice)}}</h2>
+    <br>
+    <button @click='add'>{{message[btnState]}}</button>
+    <button @click='clean' v-if='btnState'>取消</button>
+
 
   </div>
   <script src='../js/vue.js'></script>
@@ -67,37 +90,38 @@
     const App = {
       data() {
         return {
+          message: ['添加', '确认'],
+          btnState: 0,
+          newName: '',
+          newPrice: 0,
+          newCount: 1,
           books: [
             {
               id: 1,
-              name: '《JavaScript高级程序设计》',
-              date: '2022-6',
+              name: 'JavaScript高级程序设计',
               price: 126.00,
               count: 1,
             },
             {
               id: 2,
-              name: '《你不知道的 JS（上卷）》',
-              date: '2022-1',
+              name: '你不知道的 JS（上卷）',
               price: 78.00,
               count: 1,
             },
             {
               id: 3,
-              name: '《你不知道的 JS（中卷）》',
-              date: '2022-2',
+              name: '你不知道的 JS（中卷）',
               price: 76.00,
               count: 1,
             },
             {
               id: 4,
-              name: '《你不知道的 JS（下卷）》',
-              date: '2022-3',
+              name: '你不知道的 JS（下卷）',
               price: 64.00,
               count: 1,
             },
           ],
-          chouseId:-1,
+          chouseId: -1,
 
         }
       },
@@ -112,20 +136,58 @@
         addMoney(price) {
           return '￥' + price;
         },
-        decrement(obj,key) {
+        addBook(book) {
+          return "《" + book + "》";
+        },
+        decrement(obj, key) {
           obj[key]--;
         },
-        increment(obj,key) {
+        increment(obj, key) {
           obj[key]++;
         },
-        deleteBook(index,arr){
-          arr.splice(index,1);
-          if(index<=this.chouseId){
+        deleteBook(index, arr) {
+          arr.splice(index, 1);
+          if (index <= this.chouseId) {
             this.chouseId--
           }
         },
-        chouseT(index){
-          this.chouseId =index;
+        chouseT(index) {
+          this.chouseId = index;
+        },
+        add() {
+          if (this.btnState == 1) {
+            if (this.newName !== '') {
+
+              if (this.newPrice > 0) {
+
+                this.books.push({
+                  id: this.books.length + 1,
+                  name: this.newName,
+                  price: this.newPrice,
+                  count: this.newCount,
+                })
+              } else {
+                alert('价格应当是正数')
+                return;
+              }
+            } else {
+              alert('书名不能为空');
+              return;
+            }
+          }
+          this.clean();
+        },
+        inNew() {
+          this.newCount++;
+        },
+        deNew() {
+          this.newCount--;
+        },
+        clean() {
+          this.btnState = (this.btnState * -1) + 1
+          this.newName = '';
+          this.newPrice = 0;
+          this.newCount = 1;
         }
       }
     };
