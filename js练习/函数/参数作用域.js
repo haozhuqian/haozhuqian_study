@@ -31,6 +31,6 @@ function f(
   console.log(x);
 }
 
-f();
+f();//函数参数作用域原有实现
 console.log("");
-a();
+a();//近似实现
