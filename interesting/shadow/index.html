@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="bg" class="bg">
+    <div id="shadow" class="shadow">good-money</div>
+    <div id="box" class="box">good-money</div>
+    <div id="light" class="light"></div>
+  </div>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .bg {
+      position: relative;
+      overflow: hidden;
+      cursor: none;
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+      --x: 0px;
+      --y: 0px;
+      --bim: 0;
+      --biger: 1;
+    }
+
+    .shadow,
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 26px;
+      width: 200px;
+      height: 60px;
+      box-shadow: 0px 0px 4px #888;
+    }
+
+    .shadow {
+      filter: blur(var(--bim));
+      position: absolute;
+      top: var(--y);
+      left: var(--x);
+      transform: scale(var(--biger), var(--biger));
+      background-color: #0003;
+    }
+
+    .box {
+      position: relative;
+      backdrop-filter: blur(5px);
+      top: 300px;
+      margin: 0 auto;
+      background-color: #fff3;
+    }
+    .light{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, #fff 0%, #fff 10%, #0000 20%);
+      pointer-events: none;
+    }
+  </style>
+  <script>
+    const bg = document.getElementById('bg');
+    const box = document.getElementById('box');
+    const light = document.getElementById('light');
+    bg.addEventListener('mousemove', (e) => {
+      let x = e.pageX;
+      let y = e.pageY;
+      light.style.setProperty('left', `${x-100}px`);
+      light.style.setProperty('top', `${y-100}px`);
+      let ax = 2 * box.offsetLeft + 100 - x;
+      let rx = box.offsetLeft + 100 - x;
+      let ay = 2 * box.offsetTop + 30 - y;
+      let ry = box.offsetTop + 30 - y;
+      let distance = Math.floor(Math.sqrt(rx * rx + ry * ry));
+      bg.style.setProperty('--x', `${ax}px`);
+      bg.style.setProperty('--y', `${ay}px`);
+      bg.style.setProperty('--bim', `${distance * 0.005}px`);
+      bg.style.setProperty('--biger', `${distance / 200 + 1}`);
+    });
+  </script>
+</body>
+
+</html>
