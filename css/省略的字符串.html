@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box">
+    <span class="start">start</span><span class="string">xxxxxxxxxxxxxxxxxxxxxxxx</span><span class="end">end</span>
+  </div>
+</body>
+<style>
+.box{
+  margin-top: 100px;
+  display: flex;
+  width: 100%;
+}
+.string{
+  overflow: hidden;
+  flex-shrink: 2;
+  text-overflow: ellipsis;
+}
+
+</style>
+</html>
