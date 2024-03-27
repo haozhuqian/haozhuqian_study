@@ -11,7 +11,7 @@
     padding: 8px 16px;
   }
   .active{
-    background-color: aqua;
+    background-color: rgb(0, 255, 255);
   }
 </style>
 
@@ -30,7 +30,6 @@
       </tr>
     </thead>
     <tbody>
-      
       <tr v-for="(item,index) in books" :key="item.id" :class="{active:index===countindex}">
         <delTr :name="item.name" :price="item.price" 
         :count="item.count" :index="index" 

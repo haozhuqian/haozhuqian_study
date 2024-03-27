@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+html{
+  --dark: #001724;
+  background-color: var(--dark);
+}
+
+
