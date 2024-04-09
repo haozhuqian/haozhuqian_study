@@ -20,7 +20,7 @@ class PriorityQueue<T>{
     private up(i: number) {
         const h = this.h;
         let n = i >> 1;
-        while (i > 1 && this.pre(h[i], h[n]) > 0) [h[i], h[n], i, n] = [h[n], h[i], n, n >> 1];
+        while (i > 0 && this.pre(h[i], h[n]) > 0) [h[i], h[n], i, n] = [h[n], h[i], n, n >> 1];
     }
     push(v: T) {
         this.h[++this.size] = v;
