@@ -1,13 +1,7 @@
 class PriorityQueue<T>{
-    private size: number;
-    private readonly h: T[];
-    constructor(private readonly pre: (a: T, b: T) => number) {
-        this.h = [];
-        this.size = 0;
-    }
-    getSize() {
-        return this.size;
-    }
+    size = 0;
+    private readonly h: T[] = [];
+    constructor(private readonly pre: (a: T, b: T) => number) {}
     private down(i: number) {
         const h = this.h, l = this.size + 1, pre = this.pre;
         let n = i << 1;
