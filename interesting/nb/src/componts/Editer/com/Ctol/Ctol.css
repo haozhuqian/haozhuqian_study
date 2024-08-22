@@ -1,0 +1,33 @@
+.control-block-out {
+  width: 100%;
+  padding: 0 2px 2px;
+  font-size: 12px;
+  font-weight: 900;
+  border-radius: 4px;
+}
+.control-block-in {
+  overflow: hidden;
+  padding: 2px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: height 0.2s ease;
+}
+
+.control-block-turn{
+  overflow: hidden;
+  display: grid;
+  transition: 0.3s;
+  grid-template-rows: 1fr;
+}
+.control-block-close{
+  grid-template-rows: 0fr;
+}
+
+.control-block-close > .control-block-in{
+  min-height: 0px;
+  padding: 0px;
+}
+
+.block-focused {
+  outline: 2px solid #000;
+}

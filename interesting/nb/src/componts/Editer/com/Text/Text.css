@@ -1,0 +1,21 @@
+.text {
+  min-height: 32px;
+  display: flex;
+  text-align: left;
+  white-space: pre-wrap;
+
+  font-size: 16px;
+  line-height: 22px;
+  font-family: system-ui;
+
+  width: 100%;
+  border-width: 0;
+  padding: 4px;
+
+  border-radius: 2px;
+
+  outline: none;
+  text-wrap: wrap;
+  word-break: break-all;
+  overflow: hidden;
+}
