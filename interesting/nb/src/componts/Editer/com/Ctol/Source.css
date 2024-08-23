@@ -1,0 +1,31 @@
+.control-source-out {
+  color: #000;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: rgb(255, 246, 208);
+  padding-left: 2px;
+}
+
+.control-source-turn {
+  overflow: hidden;
+  display: grid;
+  transition: 0.3s;
+  grid-template-rows: 1fr;
+  padding-left: 16px;
+}
+
+.control-source-in {
+  overflow: hidden;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: height 0.2s ease;
+}
+
+.control-source-close {
+  grid-template-rows: 0fr;
+}
+
+.control-source-close>.control-source-in {
+  min-height: 0px;
+}

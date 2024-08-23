@@ -84,13 +84,13 @@ export class multiMap<K, V> {
 }
 
 const contents = new Map<number, string>([
-  [1, `1just:[2]:(
-    2just
+  [1, `just:[2]:(
+    just
     some
     :[3]:(
-      3just
+      just
       some
-      nice:[6]:(6just
+      nice:[6]:(just
         some
         nice
         thing
@@ -98,10 +98,10 @@ const contents = new Map<number, string>([
       thing):
     [https://www.baidu.com](nice)
     ![https://www.baidu.com](nice)
-    :[3]::[4]:(4just
+    :[3]::[4]:(just
       some
       nice
-      :[3]::[5]:(5just
+      :[3]::[5]:(just
         some
         nice
         thing:[6]:):

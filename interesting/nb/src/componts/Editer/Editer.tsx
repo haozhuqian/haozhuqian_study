@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
 import { Context } from '@/utiles/Context';
-import Ctol from './com/Ctol/Ctol';
 import './Editer.css';
 import { CtolRender, } from '@/utiles/Render';
 import { BlockDefItem, TextItem } from '@/utiles/ParseTool';
 import { CtolBlock } from '@/utiles/Block';
+import View from './View';
 
 export type EditerProps = {
   blockKey: number;
 }
+
 const keyEvent = new Map<string, (context: Context) => void>([
   ['ArrowUp', (context: Context) => {
     const render = context.render.current;
@@ -134,9 +135,12 @@ export default function Editer(props: EditerProps) {
       </div>
       <div className='editer-views'>
         {views.map((view) => (
-          <div className="editer-view" key={view.name}>
-            <Ctol render={context.render.root as CtolRender} view={view} context={context} />
-          </div>
+          <View
+            key={view.name}
+            render={context.render.root as CtolRender}
+            view={view}
+            context={context}
+          />
         ))}
       </div>
     </div>

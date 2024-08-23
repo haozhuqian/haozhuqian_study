@@ -23,7 +23,7 @@ class BlockHandler {
   init(rootKey: number) {
     this.Root = this.Ctol.get(rootKey);
   }
-  newB(item: Item){
+  newB(item: Item) {
     if (this.news.has(item.type)) return this.news.get(item.type)!(item);
     else return new Block(this.context);
   };
@@ -98,10 +98,17 @@ class RenderHandler {
   }
 }
 
+export enum ViewState {
+  source = 'source',
+  block = 'block',
+  preview = 'preview',
+};
+export const ViewStateNames = ['source', 'block', 'preview'] as ViewState[];
+
 export class View {
-  name:number;
-  state = 'normal' as 'normal' | 'preview'|'source';
-  constructor(name:number) {
+  name: number;
+  state = ViewState.block;
+  constructor(name: number) {
     this.name = name;
   }
 }
@@ -109,7 +116,7 @@ export class View {
 export class Context {
   private namesPool = keyPoolCreater(0, 1);
   private views = [new View(0)];
-  private setViews = null as ((newS:View[])=>void) | null;
+  private setViews = null as ((newS: View[]) => void) | null;
   block: BlockHandler;
   render: RenderHandler;
   current = 0;
@@ -120,8 +127,11 @@ export class Context {
     this.block.init(blockKey);
     this.render.init(this.block.Root!);
   }
+  renewV() {
+    this.setViews!(this.getViews());
+  }
   init(setViews: React.Dispatch<React.SetStateAction<View[]>>) {
-    this.setViews = (newS:View[])=> {
+    this.setViews = (newS: View[]) => {
       this.views = newS;
       setViews(newS);
     };

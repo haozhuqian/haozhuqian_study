@@ -27,3 +27,8 @@
   margin: 4px;
   flex-grow: 1;
 }
+
+.block-focused {
+  outline: 2px solid #000;
+  outline-offset: -2px;
+}

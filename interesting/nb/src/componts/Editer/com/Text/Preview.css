@@ -1,5 +1,4 @@
-.text {
-  min-height: 32px;
+.text-source {
   display: flex;
   text-align: left;
   white-space: pre-wrap;
@@ -10,12 +9,10 @@
 
   width: 100%;
   border-width: 0;
-  padding: 4px;
 
   border-radius: 2px;
-
-  outline: none;
   text-wrap: wrap;
   word-break: break-all;
   overflow: hidden;
+  padding-left: 2px;
 }

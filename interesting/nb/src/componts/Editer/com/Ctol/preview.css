@@ -1,0 +1,29 @@
+.control-preview-out {
+  color: #000;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.control-preview-turn {
+  overflow: hidden;
+  display: grid;
+  transition: 0.3s;
+  grid-template-rows: 1fr;
+}
+
+.control-preview-in {
+  overflow: hidden;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: height 0.2s ease;
+}
+
+.control-preview-close {
+  grid-template-rows: 0fr;
+}
+
+.control-preview-close>.control-preview-in {
+  min-height: 0px;
+}

@@ -1,47 +1,34 @@
-import { Context, View } from "@/utiles/Context";
-import { CtolRender, Render, TextRender } from "@/utiles/Render";
+import { CtolRender, TextRender } from "@/utiles/Render";
 import cn from 'classnames';
-import Ctol from "./Ctol";
+import Ctol, { CtolProps } from "./Ctol";
 import Text from '../Text/Text';
 import React from "react";
+import './Source.css';
 
-export type CtolBlockProps = {
-  context: Context;
-  render: CtolRender;
-  view: View;
-  childs: Render[];
-}
-function Block(props:CtolBlockProps,ref:React.Ref<HTMLDivElement>) {
-  const { render, view, context,childs } = props;
+function Block(props:CtolProps,ref:React.Ref<HTMLDivElement>) {
+  const { render, view, context } = props;
   return (
     <div
       tabIndex={0}
-      style={{
-        backgroundColor: render.block.color.bright,
-        color: render.block.color.light
-      }}
-      className={cn('control-block-out', { 'block-focused': render.foced })}
+      className={cn('control-source-out', { 'block-focused': render.foced })}
       ref={ref}
       onFocus={(e) => {
         e.stopPropagation();
         context.render.focus(render);
       }}
     >
-      <div onClick={() => render.turn()}>{`${render.key}:${render.block.key}`}</div>
-      <div className={cn('control-block-turn', { 'control-block-close': !render.open })}>
-        <div className='control-block-in'
-          style={{
-            backgroundColor: render.block.color.light,
-            color: render.block.color.dark
-          }}
+      <div onClick={() => render.turn()}>{`:[${render.block.key}]:${render.open?'(':''}`}</div>
+      <div className={cn('control-source-turn', { 'control-source-close': !render.open })}>
+        <div className='control-source-in'
         >
-          {childs.map((r) =>
+          {render.childs.map((r) =>
             r instanceof CtolRender
               ? <Ctol key={r.key} render={r} view={view} context={context} />
               : <Text key={r.key} render={r as TextRender} view={view} context={context} />
           )}
         </div>
       </div>
+      {render.open?<div>{'):'}</div>:null}
     </div>
   )
 }

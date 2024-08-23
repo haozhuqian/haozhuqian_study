@@ -1,0 +1,18 @@
+.text-source {
+  display: flex;
+  text-align: left;
+  white-space: pre-wrap;
+
+  font-size: 16px;
+  line-height: 22px;
+  font-family: system-ui;
+
+  width: 100%;
+  border-width: 0;
+
+  border-radius: 2px;
+  text-wrap: wrap;
+  word-break: break-all;
+  overflow: hidden;
+  padding-left: 2px;
+}

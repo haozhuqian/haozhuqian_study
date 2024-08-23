@@ -1,18 +1,12 @@
-import { Context, View } from "@/utiles/Context";
-import { CtolRender, Render, TextRender } from "@/utiles/Render";
+import { CtolRender, TextRender } from "@/utiles/Render";
 import cn from 'classnames';
-import Ctol from "./Ctol";
+import Ctol, { CtolProps } from "./Ctol";
 import Text from '../Text/Text';
 import React from "react";
+import './Block.css';
 
-export type CtolBlockProps = {
-  context: Context;
-  render: CtolRender;
-  view: View;
-  childs: Render[];
-}
-function Block(props:CtolBlockProps,ref:React.Ref<HTMLDivElement>) {
-  const { render, view, context,childs } = props;
+function Block(props:CtolProps,ref:React.Ref<HTMLDivElement>) {
+  const { render, view, context } = props;
   return (
     <div
       tabIndex={0}
@@ -35,7 +29,7 @@ function Block(props:CtolBlockProps,ref:React.Ref<HTMLDivElement>) {
             color: render.block.color.dark
           }}
         >
-          {childs.map((r) =>
+          {render.childs.map((r) =>
             r instanceof CtolRender
               ? <Ctol key={r.key} render={r} view={view} context={context} />
               : <Text key={r.key} render={r as TextRender} view={view} context={context} />
